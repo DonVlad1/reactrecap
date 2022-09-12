@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import SearchIcon from "../src/search.svg"
 import MovieCard from "./components/MovieCard";
+import "./App.css"
 
 //api key:  fa036fab
 
@@ -29,13 +30,13 @@ const App = () =>
       <h1>My Movie App</h1>
       <div className="search">
         <input placeholder='Search for a film' value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} />
-        <img src={SearchIcon} alt="search" onClick={() => searchFilms(searchTerm)} />
+        <img className='searchImage' src={SearchIcon} alt="search" onClick={() => searchFilms(searchTerm)} />
       </div>
       {movies?.length > 0 ?
         (
           <div className="container">
             {movies.map((movie) => (
-              <MovieCard movie={movie}></MovieCard>
+              <MovieCard className="moviePic" movie={movie}></MovieCard>
             ))}
           </div>
         ) : (
