@@ -5,6 +5,12 @@ import { listUsers } from "../utils"
 const ListUsers = () =>
 {
     const [users, setUsers] = useState([])
+    const [toggle, setToggle] = useState(false)
+
+    function toggleButton()
+    {
+        setToggle(!toggle)
+    }
 
     async function getUsers(event)
     {
@@ -15,9 +21,17 @@ const ListUsers = () =>
 
     return (
         <form onSubmit={getUsers} className='showUsers'>
-            <button type='submit'>ShowUsers</button>
+            <button type='submit' onClick={toggleButton}>ShowUsers</button>
             <div>
-                {users.map((user) => (<h1>{user.name}</h1>))}
+                {toggle ?
+                    (
+                        users.map((user, userId) => (<h1 key={userId}>{user.name}</h1>))
+                    ) : (
+                        <div>
+                            <h1>User List not loaded</h1>
+                        </div>
+                    )
+                }
             </div>
         </form>
     )
