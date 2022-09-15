@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import SearchIcon from "../src/search.svg"
 import MovieCard from "./components/MovieCard";
 import Login from "./components/Login"
-import ListUsers from "./components/ListUsers"
+import ListUsers from "./components/userFunctions"
 import "./App.css"
 
 //api key:  fa036fab

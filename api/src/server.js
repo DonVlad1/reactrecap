@@ -5,6 +5,8 @@ const userRouter = require("./users/userRoutes")
 const { tokenCheck } = require("./middleware")
 const movieRouter = require("./movie/movieRouter")
 const app = express()
+
+//make sure the port is set like the bellow line
 const port = process.env.PORT || 3002
 
 app.use(cors())
